@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <title>{% block title %}Index{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="margin: 0 auto;">
+                <form method="GET" action="/addtask" autocomplete="off" class="text-center border border-light p-5" style="margin-top: 1rem;">
+                    <h1 class="display-6" style="margin: 0 auto;text-align: center;">Todo App</h1>
+                    <div class="md-form">
+                        <input type="hidden" name="objid" class="md-text form-control" id="objid" value="{{objid}}" disabled>
+                    </div>
+                    <div class="md-form">
+                        <label for="todotitle">Add Todo Title</label>
+                        <input type="text" class="md-text form-control" id="todotitle" name="todotitle">
+                    </div>
+                    <div class="md-form">
+                        <label for="tododescription">Add Todo Description</label>
+                        <textarea class="md-textarea form-control" id="tododescription" rows="3" name="tododescription"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin: 0 auto;display: block;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="container-fluid">
+        <!-- Footer -->
+        <footer class="page-footer font-small blue fixed-bottom">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="background: black;color: white;font-weight:bold;font-size:0.5rem;">
+                <span style="margin-right: 1rem;">© 2020 Copyright:</span>
+                <span style="margin-right: 1rem;"><a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a></span>
+                <span><a href="https://www.freepik.com/free-photos-vectors/business">www.freepik.com</a></span>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- JQuery -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+</body>
+
+</html>
