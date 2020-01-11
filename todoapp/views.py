@@ -2,8 +2,18 @@ from django.shortcuts import render
 from .models import Todo
 from django.http import HttpResponse,JsonResponse
 # Create your views here.
+
+def error_404_view(request, exception):
+    return render(request,'404.html')
+
+def error_404(request):
+    return render(request,'404.html')
+
 def index(request):
-    return render(request,'index.html')
+    try:
+        return render(request,'index.html')
+    except:
+        return render(request,'404.html')
 
 def addtask(request):
     try:
@@ -65,6 +75,12 @@ def deletetask(request,id):
             "alltask" : Todo.objects.all()
         }
         return render(request,'list.html',context=mydict)
+    except:
+        return render(request,'404.html')
+
+def about(request):
+    try:
+        return render(request,'about.html')
     except:
         return render(request,'404.html')
 

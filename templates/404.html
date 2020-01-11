@@ -1,11 +1,12 @@
 {% extends 'index.html' %}
-{% block title %}List{% endblock %}
+{% block title %}Page Not Found{% endblock %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6" style="margin: 0 auto;text-align:center">
-            <img src="/static/404.jpg" class="img-fluid">
-            <a href="{% url "index" %}" style="margin:0rem auto 5rem auto;" class="btn btn-primary">Go Back Home</a>
+        <div class="col-md-6" style="margin: 0 auto 5rem auto;text-align:center">
+            {% load static %}
+            <img src="{% static '404.jpg' %}" class="img-fluid">
+            <a href="{% url 'index' %}" style="margin:0rem auto 5rem auto;" class="btn btn-primary">Go Back Home</a>
         </div>
     </div>
 </div>
